@@ -70,7 +70,7 @@ entity MsfPlayerStatsBoxscore {
     sackYds Long,
     sfty Long,
     tacklesForLoss Long,
-    int Long,
+    interceptions Long,
     intTd Long,
     intYds Long,
     intAvg Double,
@@ -177,4 +177,3 @@ relationship OneToMany {
 }
 
 paginate * with pagination
-search * with elasticsearch
