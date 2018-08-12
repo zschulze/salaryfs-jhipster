@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.5.xsd">
+    <!--
+        Added the constraints for entity MsfGameQuarter.
+    -->
+    <changeSet id="20180812203549-2" author="jhipster">
+        
+        <addForeignKeyConstraint baseColumnNames="msf_game_score_id"
+                                 baseTableName="msf_game_quarter"
+                                 constraintName="fk_msf_game_quarter_msf_game_score_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="msf_game_score"/>
+
+    </changeSet>
+</databaseChangeLog>

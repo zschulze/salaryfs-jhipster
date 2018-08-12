@@ -1,0 +1,36 @@
+{
+    "name": "MsfGame",
+    "fields": [
+        {
+            "fieldName": "week",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "startTime",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "venueAllegiance",
+            "fieldType": "String"
+        }
+    ],
+    "relationships": [
+        {
+            "relationshipType": "one-to-one",
+            "relationshipName": "msfGame",
+            "otherEntityName": "msfGameScore",
+            "otherEntityField": "id",
+            "ownerSide": true,
+            "otherEntityRelationshipName": "msfGame"
+        }
+    ],
+    "changelogDate": "20180812203547",
+    "entityTableName": "msf_game",
+    "dto": "no",
+    "pagination": "no",
+    "service": "no",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "clientRootFolder": "",
+    "applications": "*"
+}
