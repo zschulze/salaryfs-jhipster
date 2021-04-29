@@ -1,0 +1,64 @@
+<div>
+    <h2 id="page-heading">
+        <span>Msf Games</span>
+        <button id="jh-create-entity" class="btn btn-primary float-right jh-create-entity create-msf-game" [routerLink]="['/msf-game/new']">
+            <fa-icon [icon]="'plus'"></fa-icon>
+            <span >
+            Create new Msf Game
+            </span>
+        </button>
+    </h2>
+    <jhi-alert></jhi-alert>
+    <br/>
+    <div class="table-responsive" *ngIf="msfGames">
+        <table class="table table-striped">
+            <thead>
+            <tr>
+            <th><span>ID</span></th>
+            <th><span>Week</span></th>
+            <th><span>Start Time</span></th>
+            <th><span>Venue Allegiance</span></th>
+            <th><span>Msf Game</span></th>
+            <th></th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr *ngFor="let msfGame of msfGames ;trackBy: trackId">
+                <td><a [routerLink]="['/msf-game', msfGame.id, 'view' ]">{{msfGame.id}}</a></td>
+                <td>{{msfGame.week}}</td>
+                <td>{{msfGame.startTime}}</td>
+                <td>{{msfGame.venueAllegiance}}</td>
+                <td>
+                    <div *ngIf="msfGame.msfGame">
+                        <a [routerLink]="['../msf-game-score', msfGame.msfGame?.id, 'view' ]" >{{msfGame.msfGame?.id}}</a>
+                    </div>
+                </td>
+                <td class="text-right">
+                    <div class="btn-group flex-btn-group-container">
+                        <button type="submit"
+                                [routerLink]="['/msf-game', msfGame.id, 'view' ]"
+                                class="btn btn-info btn-sm">
+                            <fa-icon [icon]="'eye'"></fa-icon>
+                            <span class="d-none d-md-inline">View</span>
+                        </button>
+                        <button type="submit"
+                                [routerLink]="['/msf-game', msfGame.id, 'edit']"
+                                class="btn btn-primary btn-sm">
+                            <fa-icon [icon]="'pencil-alt'"></fa-icon>
+                            <span class="d-none d-md-inline">Edit</span>
+                        </button>
+                        <button type="submit"
+                                [routerLink]="['/', { outlets: { popup: 'msf-game/'+ msfGame.id + '/delete'} }]"
+                                replaceUrl="true"
+                                queryParamsHandling="merge"
+                                class="btn btn-danger btn-sm">
+                            <fa-icon [icon]="'times'"></fa-icon>
+                            <span class="d-none d-md-inline">Delete</span>
+                        </button>
+                    </div>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

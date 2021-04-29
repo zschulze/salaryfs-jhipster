@@ -1,0 +1,30 @@
+{
+    "name": "MsfGameScore",
+    "fields": [
+        {
+            "fieldName": "currentQuarter",
+            "fieldType": "Long"
+        },
+        {
+            "fieldName": "seconds",
+            "fieldType": "Long"
+        }
+    ],
+    "relationships": [
+        {
+            "relationshipType": "one-to-many",
+            "relationshipName": "msfGameQuarter",
+            "otherEntityName": "msfGameQuarter",
+            "otherEntityRelationshipName": "msfGameScore"
+        }
+    ],
+    "changelogDate": "20180812203548",
+    "entityTableName": "msf_game_score",
+    "dto": "no",
+    "pagination": "no",
+    "service": "no",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "clientRootFolder": "",
+    "applications": "*"
+}

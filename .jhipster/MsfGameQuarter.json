@@ -1,0 +1,26 @@
+{
+    "name": "MsfGameQuarter",
+    "fields": [
+        {
+            "fieldName": "quarterName",
+            "fieldType": "String"
+        }
+    ],
+    "relationships": [
+        {
+            "relationshipType": "many-to-one",
+            "relationshipName": "msfGameScore",
+            "otherEntityName": "msfGameScore",
+            "otherEntityField": "id"
+        }
+    ],
+    "changelogDate": "20180812203549",
+    "entityTableName": "msf_game_quarter",
+    "dto": "no",
+    "pagination": "no",
+    "service": "no",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "clientRootFolder": "",
+    "applications": "*"
+}

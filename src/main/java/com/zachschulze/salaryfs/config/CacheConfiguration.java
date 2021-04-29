@@ -42,6 +42,10 @@ public class CacheConfiguration {
             cm.createCache(com.zachschulze.salaryfs.domain.User.class.getName(), jcacheConfiguration);
             cm.createCache(com.zachschulze.salaryfs.domain.Authority.class.getName(), jcacheConfiguration);
             cm.createCache(com.zachschulze.salaryfs.domain.User.class.getName() + ".authorities", jcacheConfiguration);
+            cm.createCache(com.zachschulze.salaryfs.domain.MsfGame.class.getName(), jcacheConfiguration);
+            cm.createCache(com.zachschulze.salaryfs.domain.MsfGameScore.class.getName(), jcacheConfiguration);
+            cm.createCache(com.zachschulze.salaryfs.domain.MsfGameScore.class.getName() + ".msfGameQuarters", jcacheConfiguration);
+            cm.createCache(com.zachschulze.salaryfs.domain.MsfGameQuarter.class.getName(), jcacheConfiguration);
             // jhipster-needle-ehcache-add-entry
         };
     }

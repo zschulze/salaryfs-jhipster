@@ -1,0 +1,24 @@
+entity MsfGame {
+	week String,
+    startTime String,
+    venueAllegiance String
+}
+
+entity MsfGameScore {
+	currentQuarter Long,
+    seconds Long
+}
+
+entity MsfGameQuarter {
+	quarterName String
+}
+
+
+relationship OneToMany {
+	MsfGameScore{msfGameQuarter} to MsfGameQuarter{msfGameScore}
+}
+
+relationship OneToOne {
+	MsfGame to MsfGameScore
+}
+

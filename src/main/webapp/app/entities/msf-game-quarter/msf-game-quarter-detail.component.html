@@ -1,0 +1,33 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="msfGameQuarter">
+            <h2><span>Msf Game Quarter</span> {{msfGameQuarter.id}}</h2>
+            <hr>
+            <jhi-alert-error></jhi-alert-error>
+            <dl class="row-md jh-entity-details">
+                <dt><span>Quarter Name</span></dt>
+                <dd>
+                    <span>{{msfGameQuarter.quarterName}}</span>
+                </dd>
+                <dt><span>Msf Game Score</span></dt>
+                <dd>
+                    <div *ngIf="msfGameQuarter.msfGameScore">
+                        <a [routerLink]="['/msf-game-score', msfGameQuarter.msfGameScore?.id, 'view']">{{msfGameQuarter.msfGameScore?.id}}</a>
+                    </div>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon [icon]="'arrow-left'"></fa-icon>&nbsp;<span> Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/msf-game-quarter', msfGameQuarter.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon [icon]="'pencil-alt'"></fa-icon>&nbsp;<span> Edit</span>
+            </button>
+        </div>
+    </div>
+</div>
